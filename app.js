@@ -17,6 +17,14 @@ app.get("/about", (req, res) => {
   res.render("about");
 });
 
+//the id will be used for the actual number in the URL
+app.get("/project/:id", (req, res) => {
+  //picking up the exact id'd project from the url
+  const project = projects[req.params.id];
+  // fills the project.pug file with that one project and send the HTML back
+  res.render("project", { project });
+});
+
 //this will be the port used for the UI
 app.listen(3000, () => {
   //A message so that we will know its working
