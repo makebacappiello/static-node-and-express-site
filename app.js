@@ -40,14 +40,6 @@ app.get("/project/:id", (req, res, next) => {
   }
 });
 
-//TEMPORARY tester for the global error handler
-app.get("/broken", (req, res, next) => {
-  // an error with no status to purposely give it a 500
-  const err = new Error("Warning!Warning! This is only a test.");
-  //send it to the error handler
-  next(err);
-});
-
 // 404 handler: runs only if no route above matched the URL
 app.use((req, res, next) => {
   // Make a kind error message

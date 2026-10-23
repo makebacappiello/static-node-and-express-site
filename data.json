@@ -7,7 +7,10 @@
       "technologies": ["HTML", "CSS", "JavaScript"],
       "live_link": "https://example.com",
       "github_link": "https://github.com/example",
-      "image_urls": ["/images/project0-main.png", "/images/project0-1.png"]
+      "image_urls": [
+        "/static/images/project0-main.png",
+        "/static/images/project0-1.png"
+      ]
     }
   ]
 }

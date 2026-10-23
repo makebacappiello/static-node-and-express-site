@@ -1,28 +1,31 @@
+//- Use the shared layout (header, footer, CSS) for this page
 extends layout.pug
 
+//- Everything below goes into the layout's content area
 block content
 
   article.portfolio-intro
 
-    //- Replace with your own heading like 'My Portfolio', or 'Hey, Potential Employers', or 'Let's make the web great together!' 
-    h1 Heading
+    //- The welcome message
+    h1 Hello, Potential Employers
 
-    //- Replace with a description for your portfolio, what this project is, it's purpose, what it's supposed to accomplish, etc. 
-    p Portfolio description
-
+    //- Description paragraph
+    p Welcome to my portfolio. Here I will share with you the projects I've built while learning web development.
 
   article.portfolio-project-thumbs
     .projects-box.box.grid
 
-      //- Use the Pug `each` iterator to loop over the projects in your data file  
-      
-        //- Use the example Pug code below and interpolated template literals as needed to dynamically generate:
-          //- The paths in the link's href and img's src attributes
-          //- The text 'Thumbnail' interpolated with the project title for the img's alt attribute
-          //- The project title for the h5 element's text
+      //- Loop over each project from projects array we passed in from app.js
+      each project in projects
 
+        //- One box on the page for each project
         .cell
-          a(href='#')
-            img.thumbnail(src='https://placehold.it/550x550', alt='')
-            h5 My Site
 
+          //- Link to this project's page, like /project/0
+          a(href=`/project/${project.id}`)
+
+            //- Show the first image, with alt text received from the project name
+            img.thumbnail(src=project.image_urls[0], alt=`Thumbnail of ${project.project_name}`)
+
+            //- Show the project name under the image
+            h5= project.project_name
