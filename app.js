@@ -40,6 +40,14 @@ app.get("/project/:id", (req, res, next) => {
   }
 });
 
+//TEMPORARY tester for the global error handler
+app.get("/broken", (req, res, next) => {
+  // an error with no status to purposely give it a 500
+  const err = new Error("Warning!Warning! This is only a test.");
+  //send it to the error handler
+  next(err);
+});
+
 // 404 handler: runs only if no route above matched the URL
 app.use((req, res, next) => {
   // Make a kind error message
@@ -54,8 +62,22 @@ app.use((req, res, next) => {
   next(err);
 });
 
-// This is the port used for the UI
+//the global error handler
+app.use((err, req, res, next) => {
+  // If the error has no status yet,then throw an error 500
+  err.status = err.status || 500;
+  // If the error has no message yet, show a friendly one
+  err.message =
+    err.message ||
+    "Sorry, the page you entered cannot be found. Please try again";
+  // send message and status to the console
+  console.log(err.message, err.status);
+  // Send back the right status code and show the message on UI
+  res.status(err.status).send(err.message);
+});
+
+// This is the port used to show that the app is working and the UI will render
 app.listen(3000, () => {
-  // A message so that we will know it's working
+  // A message for the console as proof it works
   console.log("We are online and listening on port 3000");
 });
