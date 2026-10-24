@@ -40,14 +40,6 @@ app.get("/project/:id", (req, res, next) => {
   }
 });
 
-// TEMPORARY: a route that deliberately breaks so we can test the 500 page
-app.get("/broken", (req, res, next) => {
-  // Make an error with no status, so the global handler gives it a 500
-  const err = new Error("WARNING WARNING!!! .!This is a test error");
-  // Pass it to the error handling
-  next(err);
-});
-
 // 404 handler: runs only if no route above matched the URL
 app.use((req, res, next) => {
   // Make a kind error message
