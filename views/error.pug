@@ -1,0 +1,17 @@
+//- Use the main layout
+extends layout.pug
+
+//- Everything below goes into the layout's content area
+block content
+
+  //- Wrapper so the page lines up with the rest of the site
+  article.portfolio-about
+
+    //- Show the status code from error object
+    h1= err.status
+
+    //- Show the message from the error object
+    p= err.message
+
+    //- Link to home page
+    a(href='/') Back to home page

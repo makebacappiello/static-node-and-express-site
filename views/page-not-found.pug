@@ -1,0 +1,16 @@
+
+extends layout.pug 
+
+block content 
+
+    //- Wrapper so the page lines up with the rest of the site
+    article.portfolio-about 
+
+        //- Shows the status code from the error object
+        h1= err.status 
+        
+        //- Show the friendly message from the error object
+        p= err.message 
+    
+        //- Link back to home page
+        a(href='/') Back to home page

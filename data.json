@@ -2,11 +2,11 @@
   "projects": [
     {
       "id": 0,
-      "project_name": "Project One",
-      "description": "A short description.",
+      "project_name": "Random Quotes",
+      "description": "A web app that shows a new random quote each time you click.",
       "technologies": ["HTML", "CSS", "JavaScript"],
-      "live_link": "https://example.com",
-      "github_link": "https://github.com/example",
+      "live_link": "https://makebacappiello.github.io/Random-Quotes/",
+      "github_link": "https://github.com/makebacappiello",
       "image_urls": [
         "/static/images/project0-main.png",
         "/static/images/project0-1.jpg"

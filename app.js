@@ -40,6 +40,14 @@ app.get("/project/:id", (req, res, next) => {
   }
 });
 
+// TEMPORARY: a route that deliberately breaks so we can test the 500 page
+app.get("/broken", (req, res, next) => {
+  // Make an error with no status, so the global handler gives it a 500
+  const err = new Error("WARNING WARNING!!! .!This is a test error");
+  // Pass it to the error handling
+  next(err);
+});
+
 // 404 handler: runs only if no route above matched the URL
 app.use((req, res, next) => {
   // Make a kind error message
@@ -54,18 +62,28 @@ app.use((req, res, next) => {
   next(err);
 });
 
-//the global error handler
+// Global error handler
 app.use((err, req, res, next) => {
-  // If the error has no status yet,then throw an error 500
+  // If error has no status run the 500 server error
   err.status = err.status || 500;
-  // If the error has no message yet, show a friendly one
-  err.message =
-    err.message ||
-    "Sorry, the page you entered cannot be found. Please try again";
-  // send message and status to the console
+
+  // If error has no message show friendly one
+  err.message = err.message || "Oops, seems like we made a doozy here!";
+
+  // Send the message and status to the console
   console.log(err.message, err.status);
-  // Send back the right status code and show the message on UI
-  res.status(err.status).send(err.message);
+
+  // Set the status code on the response
+  res.status(err.status);
+
+  // If page not found...
+  if (err.status === 404) {
+    // ...show the page-not-found message and pass it the error
+    res.render("page-not-found", { err });
+  } else {
+    // ...otherwise show the general error message and pass it the error
+    res.render("error", { err });
+  }
 });
 
 // This is the port used to show that the app is working and the UI will render
