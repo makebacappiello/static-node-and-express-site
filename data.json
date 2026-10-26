@@ -3,13 +3,61 @@
     {
       "id": 0,
       "project_name": "Random Quotes",
-      "description": "A web app that shows a new random quote each time you click.",
+      "description": "A web app that shows a new random quote each time you click a button.",
       "technologies": ["HTML", "CSS", "JavaScript"],
       "live_link": "https://makebacappiello.github.io/Random-Quotes/",
-      "github_link": "https://github.com/makebacappiello",
+      "github_link": "https://github.com/makebacappiello/Random-Quotes",
       "image_urls": [
         "/static/images/project0-main.png",
         "/static/images/project0-1.jpg"
+      ]
+    },
+    {
+      "id": 1,
+      "project_name": "Data Pagination and Filtering",
+      "description": "A student directory that splits a long list into pages and lets you search by name.",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "live_link": "https://makebacappiello.github.io/Unit2/",
+      "github_link": "https://github.com/makebacappiello/Unit2",
+      "image_urls": [
+        "/static/images/project1-main.png",
+        "/static/images/project1-1.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "project_name": "Interactive Form",
+      "description": "A registration form with live validation, helpful error messages, and options that change based on what you pick.",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "live_link": "https://makebacappiello.github.io/interactive-form/",
+      "github_link": "https://github.com/makebacappiello/interactive-form",
+      "image_urls": [
+        "/static/images/project2-main.png",
+        "/static/images/project2-1.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "project_name": "Phrase Hunter Game",
+      "description": "A word-guessing game built with object-oriented JavaScript, using classes for the game and the phrases.",
+      "technologies": ["HTML", "CSS", "JavaScript", "OOP"],
+      "live_link": "https://makebacappiello.github.io/OOP-Game/",
+      "github_link": "https://github.com/makebacappiello/OOP-Game",
+      "image_urls": [
+        "/static/images/project3-main.png",
+        "/static/images/project3-1.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "project_name": "Employee Directory",
+      "description": "An employee directory that pulls people from a public API and shows their details in a pop-up window.",
+      "technologies": ["HTML", "CSS", "JavaScript", "Fetch API"],
+      "live_link": "https://makebacappiello.github.io/public-api-requests/",
+      "github_link": "https://github.com/makebacappiello/public-api-requests",
+      "image_urls": [
+        "/static/images/project4-main.png",
+        "/static/images/project4-1.jpg"
       ]
     }
   ]
