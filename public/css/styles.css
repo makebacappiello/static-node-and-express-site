@@ -20,7 +20,7 @@ body {
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
-  background: #4a1d6b; /* deep purple, picked to match my profile photo */
+  background: #000; /* black, picked to match my profile photo */
   transform: translateX(0px);
   transition: all 0.4s ease-out;
 }
@@ -139,7 +139,7 @@ nav a span {
   height: 100%;
   min-height: 100%;
   padding: 20px;
-  background: #000;
+  background: #4a1d6b; /* deep purple sidebar, picked to match my profile photo */
 }
 
 .sidebar-info-box {
@@ -359,4 +359,27 @@ nav a span {
   .inner-wrapper {
     max-width: 1200px;
   }
+}
+/* Project thumbnails on the home page: square shape, shadow, and hover animation */
+.projects-box .thumbnail {
+  /* Fill the width of the box */
+  width: 100%;
+  /* Make the height match the width, so every thumbnail is a square */
+  aspect-ratio: 1 / 1;
+  /* Crop the screenshot to fit instead of squishing it */
+  object-fit: cover;
+  /* Keep the top of the screenshot visible when cropping */
+  object-position: top;
+  /* A soft shadow under each thumbnail */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  /* Animate the size and shadow changes over 0.3 seconds */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* When the mouse is over a project box, change its thumbnail */
+.projects-box .cell:hover .thumbnail {
+  /* Grow the thumbnail slightly */
+  transform: scale(1.03);
+  /* Make the shadow bigger and darker */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
 }

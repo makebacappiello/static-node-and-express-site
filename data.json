@@ -21,7 +21,7 @@
       "github_link": "https://github.com/makebacappiello/Unit2",
       "image_urls": [
         "/static/images/project1-main.png",
-        "/static/images/project1-1.jpg"
+        "/static/images/project1-1.png"
       ]
     },
     {
@@ -33,7 +33,7 @@
       "github_link": "https://github.com/makebacappiello/interactive-form",
       "image_urls": [
         "/static/images/project2-main.png",
-        "/static/images/project2-1.jpg"
+        "/static/images/project2-1.png"
       ]
     },
     {
@@ -45,7 +45,7 @@
       "github_link": "https://github.com/makebacappiello/OOP-Game",
       "image_urls": [
         "/static/images/project3-main.png",
-        "/static/images/project3-1.jpg"
+        "/static/images/project3-1.png"
       ]
     },
     {
@@ -57,7 +57,7 @@
       "github_link": "https://github.com/makebacappiello/public-api-requests",
       "image_urls": [
         "/static/images/project4-main.png",
-        "/static/images/project4-1.jpg"
+        "/static/images/project4-1.png"
       ]
     }
   ]
